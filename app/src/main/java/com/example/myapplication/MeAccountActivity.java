@@ -38,6 +38,8 @@ public class MeAccountActivity extends AppCompatActivity {
 
     static boolean isAdmin;
 
+    private String Admin_or_User;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,55 +48,48 @@ public class MeAccountActivity extends AppCompatActivity {
         binding = ActivityMeAccountBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        //iAdmin = LoginActivity.iAdmin;
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         isAdmin = sharedPreferences.getBoolean("isAdmin", false); // По умолчанию false
+        Admin_or_User = retAdminOrUser();
+
         dysplayMyInformation();
+
     }
+
+    private String retAdminOrUser(){
+        if(isAdmin)
+            return "Admins";
+        else
+            return "Users";
+    }
+
     private void dysplayMyInformation(){
         DatabaseReference db = FirebaseDatabase.getInstance("https://delivery-of-building-mat-100df-default-rtdb.europe-west1.firebasedatabase.app").getReference();
         String userUid = FirebaseAuth.getInstance().getUid();
-        if(!isAdmin) {
-            db.child("Users").child(userUid).addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    if (snapshot.hasChild("phone")) {
-                        String phone = snapshot.child("phone").getValue(String.class);
-                        binding.myPhoneText.setText(phone);
-                    }
-                    binding.myEmailText.setText(snapshot.child("email").getValue(String.class));
-                    binding.myNameText.setText(snapshot.child("username").getValue(String.class));
+        db.child(Admin_or_User).child(userUid).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.hasChild("phone")) {
+                    String phone = snapshot.child("phone").getValue(String.class);
+                    binding.myPhoneText.setText(phone);
                 }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-                    Toast.makeText(getApplicationContext(), "Ошибка при подключении к базе данных", Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
-        else{
-            db.child("Admins").child(userUid).addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    if(snapshot.hasChild("phone")){
-                        String phone = snapshot.child("phone").getValue(String.class);
-                        binding.myPhoneText.setText(phone);
-                    }
-                    binding.myEmailText.setText(snapshot.child("email").getValue(String.class));
-                    binding.myNameText.setText(snapshot.child("username").getValue(String.class));
+                binding.myEmailText.setText(snapshot.child("email").getValue(String.class));
+                binding.myNameText.setText(snapshot.child("username").getValue(String.class));
+                binding.buttonChangeEmail.setEnabled(false); //надо починить
+                if(!isAdmin)
+                {
                     binding.buttonChangeName.setEnabled(false);
                     binding.buttonChangeName.setTextColor(Color.DKGRAY);
                     binding.deleteAccountButton.setEnabled(false);
                     binding.deleteAccountButton.setTextColor(Color.DKGRAY);
                 }
+            }
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-                    Toast.makeText(getApplicationContext(), "Ошибка при подключении к базе данных", Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
-
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(getApplicationContext(), "Ошибка при подключении к базе данных", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void bntChangeName(View v) {
@@ -111,7 +106,7 @@ public class MeAccountActivity extends AppCompatActivity {
 
                 if (newName.isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Введите новое имя", Toast.LENGTH_SHORT).show();
-                    return; // Выход, если поле пустое
+                    return;
                 }
                 binding.myNameText.setText(newName);
                 DatabaseReference db = FirebaseDatabase.getInstance("https://delivery-of-building-mat-100df-default-rtdb.europe-west1.firebasedatabase.app").getReference();
@@ -147,7 +142,52 @@ public class MeAccountActivity extends AppCompatActivity {
     }
 
     public void bntChangePhone(View v){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Введите ваш номер");
 
+        EditText input = new EditText(this);
+        builder.setView(input);
+
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        String newPhone = input.getText().toString().trim();
+
+                        if (newPhone.isEmpty()) {
+                            Toast.makeText(getApplicationContext(), "Введите ваш телефон", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        binding.myPhoneText.setText(newPhone);
+                        DatabaseReference db = FirebaseDatabase.getInstance("https://delivery-of-building-mat-100df-default-rtdb.europe-west1.firebasedatabase.app").getReference();
+                        db.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                db.child(Admin_or_User).child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("phone").setValue(newPhone)
+                                        .addOnCompleteListener(task -> {
+                                            if(task.isSuccessful()){
+                                                Toast.makeText(getApplicationContext(), "Контакт успешно изменён", Toast.LENGTH_SHORT).show();
+                                            }else{
+                                                Toast.makeText(getApplicationContext(), "Ошибка при изменении контакта в базе данных", Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+                                Toast.makeText(getApplicationContext(), "Ошибка доступа к базе данных", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                })
+                .setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     public void btnChangeEmail(View v){
