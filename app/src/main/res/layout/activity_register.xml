@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    tools:context=".RegisterActivity">
+
+    <ImageView
+        android:id="@+id/imageRegister"
+        android:layout_width="270sp"
+        android:layout_height="270sp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="22dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/register1" />
+
+    <Button
+        android:id="@+id/button_registration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="256dp"
+        android:layout_marginBottom="92dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/t5"
+        android:onClick="btnRegistration"
+        android:text="Регистрация"
+        android:textColor="@color/register"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageRegister" />
+
+    <ImageButton
+        android:id="@+id/button_back_to_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
+        android:background="@android:color/transparent"
+        android:onClick="bntBack_to_login"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
+
+    <ImageView
+        android:id="@+id/image_key_registr"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_email_login"
+        app:srcCompat="@drawable/key" />
+
+    <ImageView
+        android:id="@+id/image_user_registr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_key_registr"
+        app:srcCompat="@drawable/username" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress_regisr"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="27dp"
+        android:ems="10"
+        android:hint="Введите адресс электронной почты"
+        android:inputType="textEmailAddress"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/image_email_login"
+        app:layout_constraintTop_toBottomOf="@+id/imageRegister" />
+
+    <ImageView
+        android:id="@+id/image_email_login"
+        android:layout_width="34dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageRegister"
+        app:srcCompat="@drawable/email" />
+
+    <EditText
+        android:id="@+id/editTextTextUsername"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="18dp"
+        android:ems="10"
+        android:hint="Введите имя"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/image_user_registr"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword_registr" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword_registr"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="Введите пароль"
+        android:inputType="textPassword"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/image_key_registr"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress_regisr" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

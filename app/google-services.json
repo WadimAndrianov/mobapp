@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "382670730015",
+    "project_id": "delivery-of-building-mat-100df",
+    "storage_bucket": "delivery-of-building-mat-100df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382670730015:android:3221feb92d0639a39b362a",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxkO32lD1c2_Vy60WB7q8MmEyDIW1qkoI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
