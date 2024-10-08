@@ -19,10 +19,10 @@
 [3 Системные требования](#3)  
 [3.1 Функциональные требования](#31)  
 [3.1.1 Авторизация](#311)  
-[3.1.2 Просмотр рецептов блюд](#312)  
-[3.1.3 Добавление рецептов](#313)  
-[3.1.4 Удаление рецептов](#314)  
-[3.1.5 Редактирование рецептов](#315)  
+[3.1.2 Просмотр доступных строительных материалов и добавление новых](#312)  
+[3.1.3 Просмотр карзины товаров](#313)  
+[3.1.4 Просмотр статуса доставки](#314)  
+[3.1.5 Меню пользователя](#315)  
 [3.2 Нефункциональные требования](#32)  
 
 <a name="1"/>
@@ -81,43 +81,33 @@ Firebase Storage для хранения изображений строител
 
 Страница регистрации
 
-![Страница регистрации](https://github.com/Anton-320/Android-recipes/blob/main/docs/mockups/sign_up_page.png)
+![Страница регистрации](https://github.com/WadimAndrianov/mobapp/blob/main/docs/mockups/registration_activity.png)
 
 Страница входа в аккаунт
 
-![Страница входа в аккаунт](https://github.com/Anton-320/Android-recipes/blob/main/docs/mockups/sign_in_page.png)
+![Страница входа в аккаунт](https://github.com/WadimAndrianov/mobapp/blob/main/docs/mockups/login_activity.png)
 
 Главная страница приложения отображает информацию об организации, о стоимости доставки, контакты. Так же с главной страницы можно будет премещаться по страницам приложения. Ниже представлена главная страница.
 
 Главная страница
 
-![Главная страница](https://github.com/Anton-320/Android-recipes/blob/main/docs/mockups/main_page.png)
+![Главная страница](https://github.com/WadimAndrianov/mobapp/blob/main/docs/mockups/main_activity.png)
 
 При переходе на страницу каталога, пользователь увидит существущие категории товаров. Ниже представлен пример страницы каталога.
 
 Страница каталога
 
-![Страница рецепта](https://github.com/Anton-320/Android-recipes/blob/main/docs/mockups/recipe_page.png)
-
-С главной страницы пользователь может перейти на доставки. Здесь отображён статус доставки. Ниже представлена страница доставки. 
-
-Страница доставки
-
-![Страница добавления рецепта](https://github.com/Anton-320/Android-recipes/blob/main/docs/mockups/recipe_add_page.png)
-
-С главной сраницы пользователь может перейти в свою корзину. Здесь отображены товары, которые пользователь добавил себе в карзину. Ниже представлена страница корзины.
-
-![Страница добавления рецепта](https://github.com/Anton-320/Android-recipes/blob/main/docs/mockups/recipe_add_page.png)
+![Страница каталога](https://github.com/WadimAndrianov/mobapp/blob/main/docs/mockups/catalog_activity.png)
 
 На главной странице пользователь может перейти на страницу данных, где будут отображены его данные которые он указал при регистрации с возможностью изменить эти данные. А так же возможность удалить или выйти с аккаунта.
 
 Ниже представлена страница данных
 
-![Страница добавления рецепта](https://github.com/Anton-320/Android-recipes/blob/main/docs/mockups/recipe_add_page.png)
+![Страница данных](https://github.com/WadimAndrianov/mobapp/blob/main/docs/mockups/me_account_activity.png)
 
 Если администратор выберет необходимый ему каталог, то он прейдёт на страницу добавления товара. Ниже представлена страница добавления товара
 
-![Страница добавления рецепта](https://github.com/Anton-320/Android-recipes/blob/main/docs/mockups/recipe_add_page.png)
+![Страница добавления товара](https://github.com/WadimAndrianov/mobapp/blob/main/docs/mockups/add_product_activity.png)
 
 <a name="23"/>
 
@@ -126,7 +116,7 @@ Firebase Storage для хранения изображений строител
 <a name="231">
 
 #### 2.3.1 Классы пользователей
-В описываемом приложении есть только два класса пользователя — обычный пользователь и администратор. 
+В описываемом приложении есть два класса пользователя — обычный пользователь и администратор. 
 
 <a name="232">
 
