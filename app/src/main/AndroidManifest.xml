@@ -15,6 +15,10 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".AdminUI.AddNewProductActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
+        <activity
             android:name=".MeAccountActivity"
             android:exported="false" />
         <activity

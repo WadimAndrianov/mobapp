@@ -76,7 +76,7 @@ public class MeAccountActivity extends AppCompatActivity {
                 binding.myEmailText.setText(snapshot.child("email").getValue(String.class));
                 binding.myNameText.setText(snapshot.child("username").getValue(String.class));
                 binding.buttonChangeEmail.setEnabled(false); //надо починить
-                if(!isAdmin)
+                if(isAdmin)
                 {
                     binding.buttonChangeName.setEnabled(false);
                     binding.buttonChangeName.setTextColor(Color.DKGRAY);

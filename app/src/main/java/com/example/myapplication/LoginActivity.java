@@ -30,7 +30,7 @@ import com.google.firebase.database.ValueEventListener;
 public class LoginActivity extends AppCompatActivity {
 
     EditText email, password;
-    //static boolean iAdmin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +38,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         email = (EditText)findViewById(R.id.editTextTextEmailAddress_login);
         password = (EditText)findViewById(R.id.editTextTextPassword_login);
-        //iAdmin = false;
     }
 
     public void btnLoginEnter(View v) {

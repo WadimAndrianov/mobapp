@@ -3,6 +3,6 @@
     <string name="cart" translatable="false">Корзина</string>
     <string name="delivery" translatable="false">Доставка</string>
     <string name="catalog" translatable="false">Каталог</string>
-
+    <string name="button_delete_product" translatable="false">Убрать товар</string>
 
 </resources>

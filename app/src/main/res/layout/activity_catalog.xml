@@ -62,30 +62,33 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/button1"
+                android:id="@+id/button_basic_materials"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="0dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
+                android:onClick="btnBasicMaterials"
                 app:srcCompat="@drawable/bricks" />
 
             <ImageButton
-                android:id="@+id/imageButton5"
+                android:id="@+id/button_finishing_materials"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="0dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
+                android:onClick="btnFinishingMaterials"
                 app:srcCompat="@drawable/parket" />
 
             <ImageButton
-                android:id="@+id/imageButton6"
+                android:id="@+id/button_building_tools"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="0dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
+                android:onClick="btnBuildingTools"
                 app:srcCompat="@drawable/tools" />
         </LinearLayout>
 
@@ -157,30 +160,33 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/imageButton7"
+                android:id="@+id/button_electrical_products"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="0dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
+                android:onClick="btnElectricalProducts"
                 app:srcCompat="@drawable/electrogoods" />
 
             <ImageButton
-                android:id="@+id/imageButton8"
+                android:id="@+id/button_plumbing"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="0dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
+                android:onClick="btnPlumbing"
                 app:srcCompat="@drawable/rakovina" />
 
             <ImageButton
-                android:id="@+id/imageButton9"
+                android:id="@+id/button_roofing_materials"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="0dp"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
+                android:onClick="btnRoofs"
                 app:srcCompat="@drawable/roof" />
         </LinearLayout>
 
@@ -229,14 +235,18 @@
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="370dp"
-        android:layout_height="283dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:srcCompat="@drawable/women" />
+    <CheckBox
+        android:id="@+id/check_box_catalog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="50dp"
+        android:shadowColor="@color/black"
+        android:text="Редактирование"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
