@@ -90,53 +90,59 @@ Firebase Storage: используется для хранения изобра�
 
 Главная страница
 
-![Главная страница](https://github.com/Anton-320/Android-recipes/blob/main/docs/mockups/main_page.png)
+![Главная страница](https://github.com/WadimAndrianov/mobapp/blob/main/docs/mockups/main_activity.png)
 
 Страница с каталогами товаров
 
 С страницы с каталогами пользователь может перейти на страницу с товарами выбранной категории. 
 
-![Страница каталогов](https://github.com/Anton-320/Android-recipes/blob/main/docs/mockups/recipe_page.png)
+![Страница каталогов](https://github.com/WadimAndrianov/mobapp/blob/main/docs/mockups/categories.png)
 
 Страница с товарами
 
-![Страница с товарами](https://github.com/Anton-320/Android-recipes/blob/main/docs/mockups/recipe_add_page.png)
+![Страница с товарами](https://github.com/WadimAndrianov/mobapp/blob/main/docs/mockups/products_in_category.png)
 
 Страница корзины
 
 На странице оформления заказа пользователь может выбрать адрес доставки через интеграцию с Google Maps и указать дополнительную информацию для доставки.
 
-![Страница корзины](https://github.com/Anton-320/Android-recipes/blob/main/docs/mockups/recipe_add_page.png)
+![Страница корзины](https://github.com/WadimAndrianov/mobapp/blob/main/docs/mockups/cart.png)
 
 Страница доставки
 
 На этой странице пользователь может видеть свои заказы, а так же здесь представлен контакт для связи с администратором.
 
-![Страница доставки](https://github.com/Anton-320/Android-recipes/blob/main/docs/mockups/recipe_add_page.png)
+![Страница доставки](https://github.com/WadimAndrianov/mobapp/blob/main/docs/mockups/user_delivery.png)
 
 Страница данных о пользователе
 
 На этой странице пользователь может увидеть свои данные а так же отредактировать их.
 
-![Страница данных](https://github.com/Anton-320/Android-recipes/blob/main/docs/mockups/recipe_add_page.png)
+![Страница данных](https://github.com/WadimAndrianov/mobapp/blob/main/docs/mockups/me_data.png)
 
 Страница заказов
 
 На этой странице администратор может видеть все заказы сделанные пользователями.
 
-![Страница заказов](https://github.com/Anton-320/Android-recipes/blob/main/docs/mockups/recipe_add_page.png)
+![Страница заказов](https://github.com/WadimAndrianov/mobapp/blob/main/docs/mockups/all_deliveries.png)
 
 Страница с отображением содержимого заказа
 
 На этой странице администратор может просмотреть содержимое заказа
 
-![Страница содержимого заказа](https://github.com/Anton-320/Android-recipes/blob/main/docs/mockups/recipe_add_page.png)
+![Страница содержимого заказа](https://github.com/WadimAndrianov/mobapp/blob/main/docs/mockups/one_delivary.png)
 
 Страница для поиска заказа и его редактирования
 
 На этой странице администратор может найти заказы пользователя по его номеру телефона и отредактировать заказ
 
-![Страница редактирования заказа](https://github.com/Anton-320/Android-recipes/blob/main/docs/mockups/recipe_add_page.png)
+![Страница редактирования заказа](https://github.com/WadimAndrianov/mobapp/blob/main/docs/mockups/deliveries_by_phone.png)
+
+Страница для редактирования каталога
+
+На этой странице администратор может добавить или удалить товар выбранной категории
+
+![Страница редактирования каталога](https://github.com/WadimAndrianov/mobapp/blob/main/docs/mockups/add_or_remove_product.png)
 
 <a name="23"/>
 
