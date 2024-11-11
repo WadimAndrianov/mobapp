@@ -6,28 +6,81 @@
     android:layout_height="match_parent"
     android:background="@color/bg">
 
-    <ImageButton
-        android:id="@+id/exiting_application3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="3dp"
-        android:background="@android:color/transparent"
-        android:onClick="btnClickExit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cross" />
+    <!-- Кнопка для выбора адреса -->
 
-    <ImageButton
-        android:id="@+id/go_to_main_page"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="3dp"
-        android:background="@android:color/transparent"
-        android:onClick="btnGo_exit_to_mainActivity"
+
+    <!-- RecyclerView для товаров в корзине -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecyclerViewProductsInCart"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        app:layout_constraintBottom_toTopOf="@id/total_layout"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back" />
+        app:layout_constraintTop_toBottomOf="@+id/delivery_Address" />
+
+    <!-- Фрагмент карты -->
+    <fragment
+        android:id="@+id/id_map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="0dp"
+        android:layout_height="370dp"
+        android:layout_margin="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Нижняя часть с суммой и кнопкой "Сделать заказ" -->
+    <LinearLayout
+        android:id="@+id/total_layout"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center|start"
+            android:text="Сумма заказа: 0 BYN"
+            android:textAlignment="gravity"
+            android:textColor="@color/register"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/button_buy"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:onClick="btnBuy"
+            android:text="Сделать заказ"
+            android:textAllCaps="false"
+            android:textColor="#48B632"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/delivery_Address"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:background="#D94E4E"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="Выберите адрес доставки"
+        android:textAlignment="gravity"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_map" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

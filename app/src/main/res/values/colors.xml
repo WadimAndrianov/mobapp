@@ -5,4 +5,5 @@
     <color name="bg">#FFFFFFFF</color>
     <color name="name_activity">#4f4530</color>
     <color name="register">#191c75</color>
+    <color name="blue_backround">#D0DBFA</color>
 </resources>

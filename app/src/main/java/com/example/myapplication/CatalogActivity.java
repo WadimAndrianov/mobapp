@@ -72,63 +72,68 @@ public class CatalogActivity extends AppCompatActivity {
 
     /////////////////КНОПКИ ВЫБОРА КАТЕГОРИИ////////////////
     public void btnBasicMaterials(View v){
-        if(isAdmin_ && checkBox.isChecked()){
-            Intent intent = new Intent(CatalogActivity.this, AddNewProductActivity.class);
-            intent.putExtra("category", "Основные материалы");
-            startActivity(intent);
-        }else{
-
-        }
+        Intent intent = null;
+        if(isAdmin_ && checkBox.isChecked())
+            intent = new Intent(CatalogActivity.this, AddNewProductActivity.class);
+        else
+            intent = new Intent(CatalogActivity.this, ProductsViewActivity.class);
+        intent.putExtra("category", "Основные материалы");
+        startActivity(intent);
     }
 
     public void btnFinishingMaterials(View v){
+        Intent intent = null;
         if(isAdmin_ && checkBox.isChecked()){
-            Intent intent = new Intent(CatalogActivity.this, AddNewProductActivity.class);
-            intent.putExtra("category", "Отделочные материалы");
-            startActivity(intent);
+            intent = new Intent(CatalogActivity.this, AddNewProductActivity.class);
         }else{
-
+            intent = new Intent(CatalogActivity.this, ProductsViewActivity.class);
         }
+        intent.putExtra("category", "Отделочные материалы");
+        startActivity(intent);
     }
 
     public void btnBuildingTools(View v){
+        Intent intent = null;
         if(isAdmin_ && checkBox.isChecked()){
-            Intent intent = new Intent(CatalogActivity.this, AddNewProductActivity.class);
-            intent.putExtra("category", "Строительные инструменты");
-            startActivity(intent);
+            intent = new Intent(CatalogActivity.this, AddNewProductActivity.class);
         }else{
-
+            intent = new Intent(CatalogActivity.this, ProductsViewActivity.class);
         }
+        intent.putExtra("category", "Строительные инструменты");
+        startActivity(intent);
     }
 
     public void btnElectricalProducts(View v){
+        Intent intent = null;
         if(isAdmin_ && checkBox.isChecked()){
-            Intent intent = new Intent(CatalogActivity.this, AddNewProductActivity.class);
-            intent.putExtra("category", "Электротовары и инструменты");
-            startActivity(intent);
+            intent = new Intent(CatalogActivity.this, AddNewProductActivity.class);
         }else{
-
+            intent = new Intent(CatalogActivity.this, ProductsViewActivity.class);
         }
+        intent.putExtra("category", "Электротовары и освещение");
+        startActivity(intent);
     }
 
     public void btnPlumbing(View v){
+        Intent intent = null;
         if(isAdmin_ && checkBox.isChecked()){
-            Intent intent = new Intent(CatalogActivity.this, AddNewProductActivity.class);
-            intent.putExtra("category", "Сантехника и водопровод");
-            startActivity(intent);
+            intent = new Intent(CatalogActivity.this, AddNewProductActivity.class);
         }else{
-
+            intent = new Intent(CatalogActivity.this, ProductsViewActivity.class);
         }
+        intent.putExtra("category", "Сантехника и водопровод");
+        startActivity(intent);
     }
 
     public void btnRoofs(View v){
+        Intent intent = null;
         if(isAdmin_ && checkBox.isChecked()){
-            Intent intent = new Intent(CatalogActivity.this, AddNewProductActivity.class);
-            intent.putExtra("category", "Кровельные материалы");
-            startActivity(intent);
+            intent = new Intent(CatalogActivity.this, AddNewProductActivity.class);
         }else{
-
+            intent = new Intent(CatalogActivity.this, ProductsViewActivity.class);
         }
+        intent.putExtra("category", "Кровельные материалы");
+        startActivity(intent);
     }
 
 }

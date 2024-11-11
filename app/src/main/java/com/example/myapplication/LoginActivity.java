@@ -63,7 +63,6 @@ public class LoginActivity extends AppCompatActivity {
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                                         if (snapshot.child("Admins").child(FirebaseAuth.getInstance().getUid()).exists()) {
                                             Toast.makeText(getApplicationContext(), "Вы вошли как администратор", Toast.LENGTH_SHORT).show();
-                                            //iAdmin = true;
                                             editor.putBoolean("isAdmin", true); // Пользователь администратор
                                         } else {
                                             editor.putBoolean("isAdmin", false); // Пользователь обычный

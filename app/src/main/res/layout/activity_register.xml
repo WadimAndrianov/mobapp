@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/transparent"
+    android:background="@color/bg"
     tools:context=".RegisterActivity">
 
     <ImageView
@@ -53,7 +53,7 @@
         android:id="@+id/image_key_registr"
         android:layout_width="34dp"
         android:layout_height="34dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_email_login"
@@ -63,7 +63,7 @@
         android:id="@+id/image_user_registr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_key_registr"
@@ -78,6 +78,7 @@
         android:ems="10"
         android:hint="Введите адресс электронной почты"
         android:inputType="textEmailAddress"
+        android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/image_email_login"
         app:layout_constraintTop_toBottomOf="@+id/imageRegister" />
@@ -86,7 +87,7 @@
         android:id="@+id/image_email_login"
         android:layout_width="34dp"
         android:layout_height="31dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageRegister"
@@ -100,6 +101,7 @@
         android:layout_marginTop="18dp"
         android:ems="10"
         android:hint="Введите имя"
+        android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/image_user_registr"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword_registr" />
@@ -113,6 +115,7 @@
         android:ems="10"
         android:hint="Введите пароль"
         android:inputType="textPassword"
+        android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/image_key_registr"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress_regisr" />

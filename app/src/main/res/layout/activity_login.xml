@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
+    android:background="@color/bg"
     tools:context=".LoginActivity">
 
     <ImageView
@@ -30,6 +31,7 @@
         android:ems="10"
         android:hint="Введите пороль"
         android:inputType="textPassword"
+        android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/image_key_login"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress_login" />
@@ -39,10 +41,11 @@
         android:layout_width="250sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="105dp"
+        android:layout_marginTop="50dp"
         android:ems="10"
         android:hint="Введите адресс электронной почты"
         android:inputType="textEmailAddress"
+        android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/image_email_login"
         app:layout_constraintTop_toBottomOf="@+id/imageLogin" />
@@ -51,7 +54,7 @@
         android:id="@+id/image_key_login"
         android:layout_width="34dp"
         android:layout_height="34dp"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_email_login"
@@ -61,51 +64,45 @@
         android:id="@+id/image_email_login"
         android:layout_width="34dp"
         android:layout_height="31dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="53dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageLogin"
         app:srcCompat="@drawable/email" />
 
     <Button
         android:id="@+id/button_login_enter"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="92dp"
         android:background="@android:color/transparent"
         android:fontFamily="@font/t5"
         android:onClick="btnLoginEnter"
         android:text="Войти"
         android:textColor="@color/register"
         android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/to_registration"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/to_registration"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="159dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="41dp"
+        android:layout_marginBottom="45dp"
         android:background="@android:color/transparent"
         android:onClick="btnGoRegistration"
         android:text="Регистрация"
         android:textColor="@color/register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_login_enter"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/Button_exit_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="3dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="6dp"
         android:background="@android:color/transparent"
         android:onClick="btnClickExit_Login"
         app:layout_constraintEnd_toEndOf="parent"

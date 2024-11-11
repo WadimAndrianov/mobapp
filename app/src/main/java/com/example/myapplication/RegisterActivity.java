@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
@@ -29,11 +30,13 @@ public class RegisterActivity extends AppCompatActivity {
 
     private ActivityRegisterBinding binding;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityRegisterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
     }
 
 
@@ -68,6 +71,8 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void CreateAccountInAuthentication() {
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(
                         binding.editTextTextEmailAddressRegisr.getText().toString(),
                         binding.editTextTextPasswordRegistr.getText().toString())
@@ -76,7 +81,8 @@ public class RegisterActivity extends AppCompatActivity {
                         String userUid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
                         createRecordInDatabase(userUid);
-
+                        editor.putBoolean("isAdmin", false); // Пользователь обычный
+                        editor.apply();
                         startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                     } else {
                         Toast.makeText(getApplicationContext(), "Ошибка при создании аккаунта (код 3)", Toast.LENGTH_SHORT).show();

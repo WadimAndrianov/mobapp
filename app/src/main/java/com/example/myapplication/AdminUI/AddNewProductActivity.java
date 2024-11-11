@@ -3,7 +3,6 @@ package com.example.myapplication.AdminUI;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -19,14 +18,12 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.CatalogActivity;
-import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -43,7 +40,7 @@ import java.util.HashMap;
 public class AddNewProductActivity extends AppCompatActivity {
     private String categoryName;
     EditText product_name, product_description, product_price;
-    private String productName, productPrice, productDescription, saveCurrentDate, saveCurrentTime, productRandomKey;
+    private String productName, productPrice, productDescription, currentDate, currentTime, productRandomKey;
     ImageView productImage;
     private static final int GALLERYPICK = 1;
     private Uri ImageUri;
@@ -144,13 +141,13 @@ public class AddNewProductActivity extends AppCompatActivity {
         Calendar calendar = Calendar.getInstance();
 
         @SuppressLint("SimpleDateFormat") SimpleDateFormat currentDate = new SimpleDateFormat("ddMMyyyy");
-        saveCurrentDate = currentDate.format(calendar.getTime());
+        this.currentDate = currentDate.format(calendar.getTime());
 
 
         @SuppressLint("SimpleDateFormat") SimpleDateFormat currentTime = new SimpleDateFormat("HHmmss");
-        saveCurrentTime = currentTime.format(calendar.getTime());
+        this.currentTime = currentTime.format(calendar.getTime());
 
-        productRandomKey = saveCurrentDate + saveCurrentTime;
+        productRandomKey = this.currentDate + this.currentTime;
 
         final StorageReference filePath = ProductImageRef.child(productRandomKey + ".jpg");
 
@@ -259,7 +256,18 @@ public class AddNewProductActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
-                                        Toast.makeText(AddNewProductActivity.this, "Товар успешно удален", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(AddNewProductActivity.this, "Товар успешно удален из базы данных", Toast.LENGTH_SHORT).show();
+                                        StorageReference productImageRef = FirebaseStorage.getInstance("gs://delivery-of-building-mat-100df.appspot.com").getReference().child("Product Images/" + numberCode + ".jpg");
+                                        productImageRef.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if (task.isSuccessful()) {
+                                                    Toast.makeText(AddNewProductActivity.this, "Изображение успешно удалено из storage", Toast.LENGTH_SHORT).show();
+                                                } else {
+                                                    Toast.makeText(AddNewProductActivity.this, "Ошибка при удалении изображения", Toast.LENGTH_SHORT).show();
+                                                }
+                                            }
+                                        });
                                     } else {
                                         Toast.makeText(AddNewProductActivity.this, "Ошибка при удалении товара", Toast.LENGTH_SHORT).show();
                                     }
@@ -275,6 +283,7 @@ public class AddNewProductActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Ошибка при подключении к базе данных", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 
     public void btnGoExitFromAddProduct(View v){

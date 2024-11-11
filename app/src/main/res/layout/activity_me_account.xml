@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg"
     tools:context=".MeAccountActivity">
 
     <ImageButton
@@ -26,6 +27,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="20dp"
         android:text="Мои данные"
+        android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/back_from_meAccount_Button"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,9 +35,7 @@
     <LinearLayout
         android:layout_width="335dp"
         android:layout_height="427dp"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="55dp"
-        android:layout_marginEnd="45dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

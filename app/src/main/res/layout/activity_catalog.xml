@@ -11,8 +11,8 @@
         android:id="@+id/go_to_main_page2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
         android:background="@android:color/transparent"
         android:onClick="btnGo_exit_to_mainActivity"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +47,7 @@
 
     <LinearLayout
         android:id="@+id/layot1"
-        android:layout_width="400dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:orientation="vertical"
@@ -57,7 +57,7 @@
 
         <!-- Первый LinearLayout -->
         <LinearLayout
-            android:layout_width="400dp"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
@@ -94,7 +94,7 @@
 
         <!-- Второй LinearLayout -->
         <LinearLayout
-            android:layout_width="400dp"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"> <!-- Отступ между кнопками и подписями -->
 
@@ -145,7 +145,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="400dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -155,7 +155,7 @@
         <!-- Первый LinearLayout второго блока -->
 
         <LinearLayout
-            android:layout_width="400dp"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
@@ -192,7 +192,7 @@
 
         <!-- Второй LinearLayout второго блока -->
         <LinearLayout
-            android:layout_width="400dp"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"> <!-- Отступ между кнопками и подписями второго блока -->
 

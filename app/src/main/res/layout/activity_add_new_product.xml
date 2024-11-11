@@ -82,7 +82,7 @@
         android:layout_width="350dp"
         android:layout_height="80dp"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="100dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -123,7 +123,7 @@
     <LinearLayout
         android:layout_width="350dp"
         android:layout_height="120dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="15dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -133,8 +133,8 @@
             android:id="@+id/number_product"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Код товара(xxxxxxxxxxxxxx)"
             android:ems="10"
+            android:hint="Код товара(xxxxxxxxxxxxxx)"
             android:inputType="number" />
 
         <Button

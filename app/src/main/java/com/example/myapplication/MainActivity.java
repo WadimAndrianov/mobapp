@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
+    static boolean isAdmin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,8 +30,9 @@ public class MainActivity extends AppCompatActivity {
         if(FirebaseAuth.getInstance().getCurrentUser()==null){
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
         }
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        isAdmin = sharedPreferences.getBoolean("isAdmin", false); // По умолчанию false
     }
-
 
     public void btnClickExit(View v){
         showInfoExit("Вы действительно хотите выйти?");
@@ -57,13 +61,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btn_go_to_cart(View v){
-        Intent intent = new Intent(this, CartActivity.class);
-        startActivity(intent);
+        if(!isAdmin) {
+            Intent intent = new Intent(this, CartActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void btn_go_to_delivery(View v){
-        Intent intent = new Intent(this, DeliveryActivity.class);
-        startActivity(intent);
+        if(isAdmin){
+            Intent intent = new Intent(this, ManagerDeliverysActivity.class);
+            startActivity(intent);
+        }else {
+            Intent intent = new Intent(this, DeliveryUserActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void btn_go_to_catalog(View v){

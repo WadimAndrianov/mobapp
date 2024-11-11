@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -15,9 +18,26 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".ProductsDeliveryByUsersPhone"
+            android:exported="true"
+            android:theme="@style/Theme.Design"/>
+        <activity
+            android:name=".ProductByDeliveryNumber"
+            android:exported="false" />
+        <activity
+            android:name=".ManagerDeliverysActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DeliveryUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProductsViewActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
             android:name=".AdminUI.AddNewProductActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
         <activity
             android:name=".MeAccountActivity"
             android:exported="false" />
@@ -49,6 +69,10 @@
             android:name=".CatalogActivity"
             android:exported="true"
             android:theme="@style/Theme.Design" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBoPM5oAS1bS8R4xXwDp-ZyJ4NsrmDXQTU" />
     </application>
 
 </manifest>
