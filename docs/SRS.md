@@ -80,11 +80,11 @@ Firebase Storage: используется для хранения изобра�
 
 Страница регистрации
 
-![Страница регистрации](https://github.com/Anton-320/Android-recipes/blob/main/docs/mockups/sign_up_page.png)
+![Страница регистрации](https://github.com/WadimAndrianov/mobapp/blob/main/docs/mockups/registration.png)
 
 Страница входа в аккаунт
 
-![Страница входа в аккаунт](https://github.com/Anton-320/Android-recipes/blob/main/docs/mockups/sign_in_page.png)
+![Страница входа в аккаунт](https://github.com/WadimAndrianov/mobapp/blob/main/docs/mockups/login_in.png)
 
 Главная страница приложения отображает информацию об организации и условии доставки. Ниже представлена главная страница.
 
