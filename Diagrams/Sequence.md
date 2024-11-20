@@ -14,6 +14,6 @@
 
 ![Регистрация](https://github.com/WadimAndrianov/mobapp/blob/main/Diagrams/images/Sequence%20Diagram2.png)
   
-### 3. Просмотр рецепта<a name="3"></a>
+### 3. Оформление заказа<a name="3"></a>
 
 ![Оформление заказа](https://github.com/WadimAndrianov/mobapp/blob/main/Diagrams/images/Sequence%20Diagram3.png)
