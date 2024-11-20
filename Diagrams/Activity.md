@@ -8,12 +8,12 @@
 
 ### 1. Вход в аккаунт<a name="1"></a>
 
-![Вход в аккаунт](images/Activity Diagram1.png)
+![Вход в аккаунт](https://github.com/WadimAndrianov/mobapp/blob/main/Diagrams/images/Activity%20Diagram1.png)
 
 ### 2. Регистрация<a name="2"></a>
 
-![Регистрация](images/diagram_activity_registration.png)
+![Регистрация](https://github.com/WadimAndrianov/mobapp/blob/main/Diagrams/images/Activity%20Diagram2.png)
   
 ### 3. Создание задачи<a name="3"></a>
 
-![Оформление заказа](images/diagram_activity_view_recipe.png)
+![Оформление заказа](https://github.com/WadimAndrianov/mobapp/blob/main/Diagrams/images/Activity%20Diagram3.png)
